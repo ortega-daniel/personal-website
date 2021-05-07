@@ -13,4 +13,10 @@ window.addEventListener('resize', () => {
 
 toggleButton.addEventListener('click', () => {
     nav.classList.toggle('mobile-nav');
+    if (nav.classList.contains('mobile-nav')) {
+        toggleButton.innerHTML = "<a><i class='fas fa-times fa-2x'></i></a>";
+    }
+    else {
+        toggleButton.innerHTML = "<a><i class='fas fa-bars fa-2x'></i></a>";
+    }
 });
