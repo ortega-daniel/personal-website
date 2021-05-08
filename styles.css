@@ -26,8 +26,8 @@ nav {
     z-index: 1000;
     display: flex;
     width: 100vw;
-    padding: 1.5rem 9%;
-    justify-content: flex-end;
+    padding: 1.3rem 9%;
+    justify-content: space-between ;
     align-items: center;
     background-color: transparent;
     transition: background-color 0.3s ease-in-out;
@@ -41,7 +41,12 @@ nav {
     left: auto;
     right: 0;
     transition: none;
+    flex-direction: column;
+    padding-bottom: 5rem;
+}
 
+.mobile-nav .social-links {
+    order: 1;
 }
 
 .mobile-nav .nav-links {
@@ -64,7 +69,8 @@ nav {
     margin-right: 0;
 }
 
-.mobile-nav .nav-links ul li a {
+.mobile-nav .nav-links ul li a,
+.mobile-nav .social-links ul li a {
     color: var(--secondary-color);
 }
 
@@ -73,19 +79,31 @@ nav {
     letter-spacing: 4px;
 }
 
+.social-links ul,
 .nav-links ul {
     display: flex;
     justify-content: space-between;
     list-style: none;
 }
 
-.nav-links ul li {
-    margin-right: 1.5rem;
-    transition: 0.5s;
+.social-links ul li {
+    margin-right: .7rem;
 }
 
+.nav-links ul li {
+    margin-right: 1.5rem;
+}
+
+.social-links ul li:last-of-type,
 .nav-links ul li:last-of-type {
     margin-right: 0;
+}
+
+.social-links ul li a {
+    text-decoration: none;
+    font-size: 1.7em;
+    color: var(--main-text-color);
+    transition: opacity 0.2s ease-in-out;
 }
 
 .nav-links ul li a {
@@ -95,12 +113,17 @@ nav {
     color: var(--main-text-color);
 }
 
+.social-links ul li a:hover {
+    opacity: 0.8;
+}
+
 .scrolled-nav {
     background-color: #f1f1f1;
     padding: 1.5rem auto;
 }
 
-.scrolled-nav .nav-links ul li a {
+.scrolled-nav .nav-links ul li a,
+.scrolled-nav .social-links ul li a {
     color: var(--secondary-color);
 }
 
@@ -186,7 +209,7 @@ nav {
 }
 
 .projects {
-    background-color: var(--main-text-color);
+    background-color: var(--secondary-color);
     padding: 2rem 9%;
 }
 
@@ -195,7 +218,7 @@ nav {
 }
 
 .projects-header h2 {
-    color: var(--secondary-color);
+    color: var(--main-text-color);
     font-size: 2em;
     font-weight: 400;
     letter-spacing: 1px;
@@ -204,7 +227,24 @@ nav {
 @media screen and (max-width: 598px) {
     nav {
         justify-content: flex-end;
-        padding: 1.5em 0 1.5em 5%;
+        padding: 1rem;
+    }
+
+    .nav-links ul li a,
+    .social-links ul li a {
+        font-size: 1.5em;
+    }
+
+    .social-links {
+        display: none;
+    }
+
+    .social-links ul li a {
+        font-size: 2em;
+    }
+
+    .mobile-nav .social-links {
+        display: flex;
     }
 
     .menu-item {
@@ -235,6 +275,10 @@ nav {
 }
 
 @media screen and (max-width: 398px) {
+    .mobile-nav {
+        padding-bottom: 2rem;
+    }
+
     .presentation h1 {
         font-size: 2.5em;
         letter-spacing: 3px;

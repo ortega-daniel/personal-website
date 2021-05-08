@@ -8,15 +8,16 @@ window.addEventListener('scroll', () => {
 window.addEventListener('resize', () => {
     if (window.innerWidth > 598) {
         nav.classList.remove('mobile-nav');
+        toggleButton.innerHTML = "<a><i class='fas fa-bars'></i></a>";
     }
 });
 
 toggleButton.addEventListener('click', () => {
     nav.classList.toggle('mobile-nav');
     if (nav.classList.contains('mobile-nav')) {
-        toggleButton.innerHTML = "<a><i class='fas fa-times fa-2x'></i></a>";
+        toggleButton.innerHTML = "<a><i class='fas fa-times'></i></a>";
     }
     else {
-        toggleButton.innerHTML = "<a><i class='fas fa-bars fa-2x'></i></a>";
+        toggleButton.innerHTML = "<a><i class='fas fa-bars'></i></a>";
     }
 });
